@@ -424,7 +424,7 @@ class PokeEnvWrapper(OpenAIGymEnv):
                 # build a long filename that matches the format of the parsed replay dataset
                 result = "WIN" if info["won"] == 1 else "LOSS"
                 battle_id = "".join(str(random.randint(0, 9)) for _ in range(10))
-                timestamp = datetime.now().strftime("%m-%d-%Y-%H:%M:%S")
+                timestamp = datetime.now().strftime("%m-%d-%Y_%H%M%S")
                 opponent_name = (
                     self.metamon_opponent_name or self.current_battle.opponent_username
                 )
